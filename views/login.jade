@@ -1,0 +1,14 @@
+extends layout
+block content
+    div
+      form(action='/login',method='post')
+        p
+            label(for='username') Username: 
+               input(id='username', type='text',value='', name='username')
+        p
+            label(for='password') Password: 
+               input(id='password', type='password',value='', name='password')
+        p
+            input(id='clientId', type='hidden',value='#{clientId}', name='clientId')
+            input(id='redirectUri', type='hidden',value='#{redirectUri}', name='redirectUri')
+            input(type='submit',value='Login')

@@ -1,0 +1,9 @@
+extends layout
+block content
+    div
+      form(action='/client/registration',method='post')
+        p
+            label(for='name') Name: 
+               input(id='name',type='text',value='', name='name')
+        p
+            input(type='submit',value='Sign up')
