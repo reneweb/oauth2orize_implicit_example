@@ -10,11 +10,11 @@ var server = oauth2orize.createServer();
 
 //(De-)Serialization for clients
 server.serializeClient(function(client, done) {
-    return done(null, client.id)
+    return done(null, client.clientId)
 })
 
 server.deserializeClient(function(id, done) {
-    db.collection('clients').find(id, function(err, client) {
+    db.collection('clients').find({clientId: id}, function(err, client) {
         if (err) return done(err)
         return done(null, client)
     })
@@ -28,7 +28,7 @@ server.grant(oauth2orize.grant.token(function (client, user, ares, done) {
     
     db.collection('accessTokens').save({token: tokenHash, expirationDate: expirationDate, userId: user.username, clientId: client.clienId}, function(err) {
         if (err) return done(err)
-        return done(null, token, {expires_in: expirationDate})
+        return done(null, token, {expires_in: expirationDate.toISOString()})
     })
 }))
 

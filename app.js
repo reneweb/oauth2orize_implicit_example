@@ -31,7 +31,7 @@ app.post('/registration', registration.registerUser)
 
 app.get('/login', function(req, res) { res.render('login', {clientId : req.query.clientId, redirectUri: req.query.redirectUri}) })
 app.post('/login', passport.authenticate('local', { failureRedirect: '/login' }), function(req, res) {
-    res.redirect('/oauth/authorization?response_type=code&client_id=' + req.body.clientId + '&redirect_uri=' + req.body.redirectUri)
+    res.redirect('/oauth/authorization?response_type=token&client_id=' + req.body.clientId + '&redirect_uri=' + req.body.redirectUri)
   })
 
 app.get('/oauth/authorization', oauth.authorization)
