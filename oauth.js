@@ -62,11 +62,3 @@ exports.decision = [
   },
   server.decision()
 ]
-
-// token endpoint
-exports.token = [
-    passport.authenticate(['clientBasic', 'clientPassword'], { session: false }),
-    server.token(),
-    server.errorHandler()
-]
-
