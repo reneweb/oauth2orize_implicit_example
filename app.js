@@ -37,7 +37,6 @@ app.post('/login', passport.authenticate('local', { failureRedirect: '/login' })
 app.get('/oauth/authorization', oauth.authorization)
 app.post('/decision', oauth.decision)
 
-app.post('/oauth/token', oauth.token)
 app.get('/restricted', passport.authenticate('accessToken', { session: false }), function (req, res) {
     res.send("Yay, you successfully accessed the restricted resource!")
 })
