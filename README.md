@@ -24,7 +24,7 @@ Navigate to /registration. Register a new user.
 
 ###### 2 - Get an access token
 
-Navigate to /login?clientId=&lt;clientId&gt;&redirectUri=&lt;redirectUri&gt;&responseType=code. Login with username and password. Then allow the client to access your account.
+Navigate to /login?clientId=&lt;clientId&gt;&redirectUri=&lt;redirectUri&gt;&responseType=token. Login with username and password. Then allow the client to access your account.
 If everything works the access code is returned in the fragment identifier of the URL.
 
 
