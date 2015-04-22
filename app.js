@@ -18,7 +18,7 @@ app.set('view engine', 'jade')
 app.use(bodyParser())
 app.use(expressValidator())
 app.use(cookieParser())
-app.use(session({ secret: 'keyboard cat'}))
+app.use(session({ secret: 'keyboard cat1'}))
 
 app.use(passport.initialize())
 app.use(passport.session())
